@@ -14,7 +14,7 @@ module tb;
   end
   
 endmodule
-
+//using struct inside a struct by declaring using a typedef
 module tb;
   typedef struct {
     int age;
