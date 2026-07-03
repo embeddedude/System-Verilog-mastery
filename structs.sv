@@ -14,3 +14,23 @@ module tb;
   end
   
 endmodule
+
+module tb;
+  typedef struct {
+    int age;
+    string name;
+    
+  }details;
+  typedef struct{
+    int pincode;
+    string address;
+    details dt;
+    
+  }additionalinfo;
+  additionalinfo ad;
+  initial begin
+    ad = '{500049,"pragathinagar",'{21,"lp"}};
+    $display("%p",ad);
+  end 
+endmodule
+  
