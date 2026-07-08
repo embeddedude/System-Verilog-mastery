@@ -19,3 +19,17 @@ module tb;
   $display("the output is %0b",out);
   end 
 endmodule
+//1d unpacked array 
+module tb;
+  int arr[16];
+  int sum = 0;
+  initial begin
+    for(int i=0;i<16;i++) begin
+      arr[i] = i+1;
+    end 
+    for(int i=0;i<16;i++) begin
+      sum +=arr[i];
+    end
+      $display("the sum is %0d",sum);
+    end
+endmodule
