@@ -6,4 +6,16 @@ module tb;
   $display("the value is %b",arr);
   end
 endmodule
-
+// 2d packed 
+module tb;
+  bit [2:0][3:0] arr;
+  bit [12:0] out;
+  initial begin
+  arr = 12'b101000110011;
+  out = arr[1];
+  $display("the output is %0b",out);
+  out = 0;
+  out = arr[1][3:0];
+  $display("the output is %0b",out);
+  end 
+endmodule
