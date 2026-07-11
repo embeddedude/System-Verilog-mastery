@@ -33,3 +33,22 @@ module tb;
       $display("the sum is %0d",sum);
     end
 endmodule
+
+module test;
+  int arr[24];
+  int art[4];
+  //indexing method
+  initial begin
+    for(int i = 0;i<24;i++)begin
+      arr[i]+=i;
+    end
+    for(int i = 0;i<24;i++) begin
+      $display("the value of the array is arr[%0d] is %0d",i,arr[i]);
+    end
+  end 
+  //array aggregate method
+  initial begin
+    art = '{1'b1,3'b001,2'b10,4'b1001};
+    $display("the array is %p",art);
+  end
+endmodule
