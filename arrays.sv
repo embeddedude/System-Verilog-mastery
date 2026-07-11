@@ -52,3 +52,5 @@ module test;
     $display("the array is %p",art);
   end
 endmodule
+
+//2d and 3d unpacked arrays
