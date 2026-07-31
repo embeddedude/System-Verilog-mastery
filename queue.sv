@@ -19,3 +19,26 @@ module tb;
     $display("%p",p1);
   end
 endmodule
+
+// Code your testbench here
+// or browse Examples
+class queue;
+  rand int q[$];
+  constraint q_size{q.size()==10;}
+  constraint q_write{
+    foreach (q[i])
+      q[i] inside {[1:50]};
+    }
+  constraint unique_q{
+    unique { q };
+  }
+endclass
+module tb;
+  initial begin
+    queue q1 = new();
+    q1.randomize();
+    $display("%p",q1.q);
+    q1.q.sort();
+    $display("%p",q1.q);
+  end
+endmodule
