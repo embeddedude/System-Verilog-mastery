@@ -58,3 +58,18 @@ module tb;
     ac1.show();
   end
 endmodule
+//virtual classes
+virtual class animals;
+  pure virtual function void sound();
+  endfunction
+endclass
+class dog extends animals;
+  function void sound();
+    $display("bow");
+  endfunction
+endclass
+class cat extends animals;
+  function void sound();
+    $display("meow");
+  endfunction
+endcla
