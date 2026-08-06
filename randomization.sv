@@ -37,3 +37,32 @@ module tb;
     end
   end
 endmodule
+// Code your testbench here
+// or browse Examples
+class sum;
+  rand int q[$];
+  constraint q_size{q.size()==9;
+  }
+  constraint q_value{
+    foreach(q[i])
+      q[i] inside {[10:20]};
+  }
+  constraint q_sum{
+    q.sum() <100;
+  }
+  function void display();
+    $display("the value of the queue is %p",q);
+  endfunction
+endclass
+module tb;
+  initial begin
+  sum q1 = new();
+  q1.randomize();
+  q1.display();
+  end
+endmodule
+    
+  
+      
+        
+      
